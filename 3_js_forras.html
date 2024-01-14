@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Unit teszt feladat</title>
+	<script type="text/javascript">
+	<!-- Ide jön  a feladat megoldása... -->
+
+	function kivalogatParosOtven(szamok)
+	{
+		var eredmenyTomb = szamok.filter(szam => szam %2 === 0 && szam > 50)
+		return eredmenyTomb;
+	}
+	
+	var szamok = [1, 22, 37, 74, 95, 16, 47, 18, 69, 10];
+	var eredmenyTomb = kivalogatParosOtven(szamok);
+
+	console.log("Eredmény: ",eredmenyTomb);
+
+	
+
+	function aBetukSzamaDiv() 
+	{
+		var div = document.getElementById("elsoDiv");
+		
+		var db = 0;
+		for (var i = 0; i < div.length; i++) 
+				{
+					var karakter= div[i];
+					if ( karakter === "a") 
+					{
+						db = db + 1;
+						console.log(db);
+					}	
+				}
+				return (db);
+	} 
+				
+	aBetukSzamaDiv()
+
+	
+	function osszeadasFeliras(osztaly, operandus1, operandus2)
+	{
+		const elem = document.querySelector('.${osztaly}');
+		if (elem)
+		{
+			const szam1 = parseFloat(operandus1);
+			const szam2 = parseFloat(operandus2);
+			
+			if (!isNaN(szam1) && !isNaN(szam2)) 
+			{
+				const ujParagrafus = document.createElement('p');
+				ujParagrafus.textContent = '${szam1} + ${szam2} = {szam1 + szam2}';
+				elem.appendChild(ujParagrafus);	
+			}
+		}
+	}
+	osszeadasFeliras("eredmeny", 2, 3);	
+
+
+
+	</script>
+	<script src="testBaseUnit.js"></script>
+</head>
+<body>
+    <div id="elsoDiv">adada</div>
+	<div class="eredmeny"></div>
+	<hr>
+	<div id="testResult">
+	<h2>Tesztek</h2></div>
+</body>
+</html>
